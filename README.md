@@ -4,7 +4,7 @@
 
 Открыт к предложениям о работе
 
-<p align="center">
+<p align="left">
   <a href="https://t.me/unavailable_domain"><img src="https://img.shields.io/badge/Telegram-@unavailable__domain-26A5E4?style=flat-square&logo=telegram" alt="Telegram"></a>
   <a href="mailto:workgndvrn@gmail.com"><img src="https://img.shields.io/badge/Email-workgndvrn@gmail.com-blue?style=flat-square&logo=gmail" alt="Email"></a>
 </p>
