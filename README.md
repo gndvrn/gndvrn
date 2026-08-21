@@ -1,12 +1,8 @@
 # Gennadiy Voronin
 
-[![CI](https://github.com/gndvrn/gndvrn/actions/workflows/resume-preview.yml/badge.svg)](https://github.com/gndvrn/gndvrn/actions/workflows/resume-preview.yml)
-
 **Data Engineer**
 
 Открыт к предложениям о работе
-
-## Контакты
 
 <p align="center">
   <a href="https://t.me/unavailable_domain"><img src="https://img.shields.io/badge/Telegram-@unavailable__domain-26A5E4?style=flat-square&logo=telegram" alt="Telegram"></a>
@@ -14,6 +10,8 @@
 </p>
 
 ## Резюме
+
+[![CI](https://github.com/gndvrn/gndvrn/actions/workflows/resume-preview.yml/badge.svg)](https://github.com/gndvrn/gndvrn/actions/workflows/resume-preview.yml)
 
 <!-- RESUME_PREVIEW:START -->
 <p align="center">
