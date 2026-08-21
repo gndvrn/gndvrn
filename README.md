@@ -18,7 +18,7 @@
 <!-- RESUME_PREVIEW:START -->
 <p align="center">
   <a href="./resume/resume.pdf">
-    <img src="./assets/resume.png?v=6a4a93f" alt="Резюме — Data Engineer" width="600">
+    <img src="./assets/resume.png?v=01379fc" alt="Резюме — Data Engineer" width="600">
   </a>
 </p>
 <!-- RESUME_PREVIEW:END -->
