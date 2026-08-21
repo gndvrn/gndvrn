@@ -1,5 +1,7 @@
 # Gennadiy Voronin
 
+[![CI](https://github.com/gndvrn/gndvrn/actions/workflows/resume-preview.yml/badge.svg)](https://github.com/gndvrn/gndvrn/actions/workflows/resume-preview.yml)
+
 **Data Engineer**
 
 Открыт к предложениям о работе
