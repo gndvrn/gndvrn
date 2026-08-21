@@ -24,11 +24,17 @@ jobs:
           mkdir -p assets
           pdftoppm -png -r 300 -singlefile resume/resume.pdf assets/resume
 
+      - name: Update README preview URL
+        run: |
+          SHA="${GITHUB_SHA::7}"
+          sed -i 's|src="./assets/resume.png?v=[^"]*"|src="./assets/resume.png"|' README.md
+          sed -i "s|src=\"./assets/resume.png\"|src=\"./assets/resume.png?v=${SHA}\"|" README.md
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/resume.png
-          git diff --staged --quiet && echo "No PNG changes" && exit 0
+          git add assets/resume.png README.md
+          git diff --staged --quiet && echo "No preview changes" && exit 0
           git commit -m "chore: regenerate resume preview"
           git push
