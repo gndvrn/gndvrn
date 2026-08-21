@@ -1,0 +1,194 @@
+%-------------------------
+% Resume
+% Author : Геннадий Воронин
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[russian,english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\definecolor{cvblue}{HTML}{4493f8}
+\newcommand{\resumelink}[2]{\href{#1}{\textcolor{cvblue}{#2}}}
+\hypersetup{
+  pdftitle={Геннадий Воронин — Resume (Data Engineer)},
+  pdfauthor={Геннадий Воронин},
+  pdfsubject={Data Engineering, resume},
+  pdfkeywords={data engineering, resume}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{8pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      {\small#3} & {\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+      \small#1 & \small #2 \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0pt, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=1.4em, topsep=1pt, partopsep=0pt, parsep=0pt, itemsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+\newcommand{\resumeSimpleListStart}{\begin{itemize}[leftmargin=1.4em, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=-2pt]}
+\newcommand{\resumeSimpleListEnd}{\end{itemize}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  {\Large Геннадий Воронин} \\ \vspace{2pt}
+  {\large Data Engineer} \\ \vspace{1pt}
+  {\small
+    \resumelink{https://t.me/unavailable_domain}{Telegram} $|$
+    \resumelink{mailto:workgndvrn@gmail.com}{workgndvrn@gmail.com} $|$
+    \resumelink{https://github.com/gndvrn}{GitHub}
+  }
+\end{center}
+
+%-----------PROJECT EXPERIENCE-----------
+\section{Опыт работы и проекты}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\resumelink{https://github.com/gndvrn/RESTAPI-Data-Batch-Pipeline}{\textbf{REST API Data Batch Pipeline}} $|$ Python, SQL, Airflow, dbt, ClickHouse, Docker, Superset}{}
+\resumeItemListStart
+\resumeItem{Реализовал учебный batch data pipeline: ingest из публичных REST API $\rightarrow$ ClickHouse $\rightarrow$ dbt $\rightarrow$ Superset}
+\resumeItem{Выстроил слои staging $\rightarrow$ core $\rightarrow$ marts; построил аналитические витрины в dbt}
+\resumeItem{Настроил оркестрацию в Airflow (2 DAG: extract/load и dbt run); покрыл ключевые поля dbt-тестами для контроля качества данных}
+\resumeItem{Развернул multi-service stack в Docker Compose: Airflow, ClickHouse, PostgreSQL, dbt, Superset}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\resumelink{https://github.com/gndvrn/e-commerce-dwh}{\textbf{E-commerce DWH}} $|$ Python, SQL, Airflow, ClickHouse, dbt, Docker, BPMN}{}
+\resumeItemListStart
+\resumeItem{Учебный проект --- хранилище e-commerce: спроектировал BPMN-модель компании; на её основе --- схему DWH (20+ таблиц) с четырьмя операционными источниками}
+\resumeItem{Разработал генератор синтетических транзакций для имитации работы магазина; реализовал пакетный ETL: выгрузка в объектное хранилище, загрузка в ClickHouse, витрины в dbt, визуализация в Superset}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\resumelink{https://github.com/gndvrn/docker-hadoop-spark-hive}{\textbf{Hadoop-кластер в Docker}} $|$ Hadoop, Hive, Spark, Docker, Bash}{}
+\resumeItemListStart
+\resumeItem{Развернул 11-сервисный Hadoop-кластер в Docker для курсового проекта: HDFS, YARN, Hive, Spark, JupyterLab.}
+\resumeItem{Настроил Hive с metastore на PostgreSQL и Spark on YARN; автоматизировал запуск и обслуживание кластера bash-CLI ($\sim$500 строк).}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\resumelink{https://github.com/gndvrn/kafka-spark-postgres-grafana-streaming}{\textbf{Streaming Data Pipeline}} $|$ Kafka, Spark, PostgreSQL, Grafana, Docker}{}
+\resumeItemListStart
+\resumeItem{Учебный проект --- доработал потоковый пайплайн мониторинга операционных данных интернет-магазина: Kafka $\rightarrow$ Spark $\rightarrow$ PostgreSQL $\rightarrow$ Grafana}
+\resumeItem{Добавил доменную модель и SQL-схему; развернул сервисы в Docker Compose, подготовил дашборд в Grafana}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Технические навыки}
+\begin{itemize}[leftmargin=0pt, label={}]
+  \small{\item{
+
+          \textbf{Языки и инструменты:}
+          Python (средний) --- ООП, ETL, API, обработка данных;
+          SQL (средний) --- JOIN, GROUP BY, CTE, оконные функции, query plan;
+          \\
+
+          \textbf{ETL/ELT:}
+          Airflow, dbt (data build tool) \\
+
+          \textbf{Хранилища и СУБД:}
+          PostgreSQL, ClickHouse
+          \\
+
+          \textbf{Big Data:}
+          Spark (PySpark), Hadoop
+          \\
+
+          \textbf{System design:}
+          DWH architecture (Inmon, Kimball, data lake / data lakehouse / data vault), dimensional modelling, SCD, Medallion architecture, batch / streaming;
+          \\
+
+          \textbf{Инфраструктура:}
+          Docker (продвинутый), Linux/Unix (средний) --- CLI, firewall, SSH, security
+          \\
+
+          \textbf{BI:}
+          Superset
+          \\
+
+        }}
+\end{itemize}
+
+%-----------EDUCATION & COURSES-----------
+\section{Образование}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Российский государственный аграрный университет}{сен 2022 - июнь 2026}
+{Бакалавр, информационные системы и технологии}{}
+
+\resumeSubheading
+{Яндекс.Практикум <<Специалист по Data Science>>}{фев 2023 - сен 2023}
+{Курс по ML и аналитике данных, \resumelink{https://github.com/gndvrn/yandex-practicum}{репозиторий с проектами}}{}
+
+\resumeSubHeadingListEnd
+
+%-----------ADDITIONAL INFORMATION-----------
+\section{Доп. информация}
+\resumeSimpleListStart
+\resumeItem{Английский --- upper-intermediate (свободное чтение тех. документации/книг)}
+\resumeSimpleListEnd
+
+%-------------------------------------------
+\end{document}
